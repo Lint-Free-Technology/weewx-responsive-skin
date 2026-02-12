@@ -326,6 +326,7 @@ class XmlFileHelper(object):
         """
 
         self.xml_file = xml_file
+        self.root = None
 
         try:
             xml_file_path_parts = xml_file.split('/')
@@ -532,6 +533,7 @@ class JsonFileHelper(object):
         self.json_file = json_file
         self.local_file = json_file.split('/')[-1]
         self.local_file_path = os.path.join(searcher.cache_root, self.local_file)
+        self.root = None
  
         if os.path.exists(self.local_file_path):
             try:
